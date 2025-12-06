@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyt4hy27g6w8c"]
+
+[ext_resource type="Script" uid="uid://b1jlb0umdccid" path="res://billiard parts/pool_cue.gd" id="1_2daj1"]
+[ext_resource type="PackedScene" uid="uid://bdgxp5u16lpqc" path="res://models/poolcue.blend" id="1_dngy7"]
+[ext_resource type="Script" uid="uid://dwf6beijla4af" path="res://level/charge.gd" id="4_ys7cc"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2daj1"]
+height = 0.042971678
+radius = 0.0063476563
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2n3i2"]
+size = Vector3(0.015991211, 0.0116119385, 0.060150146)
+
+[node name="CharacterBody3D" type="RigidBody3D" node_paths=PackedStringArray("ui")]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_2daj1")
+ui = NodePath("CanvasLayer/Control")
+
+[node name="poolcue" parent="." instance=ExtResource("1_dngy7")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -3.0819624e-08, 0.7050708)
+shape = SubResource("CylinderShape3D_2daj1")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020308755, 0.0014336966, 0.70307004)
+shape = SubResource("BoxShape3D_2n3i2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_ys7cc")
+
+[node name="ChargeBar" type="ProgressBar" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 300.0
+offset_bottom = 27.0

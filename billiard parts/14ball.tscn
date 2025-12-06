@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3rqho46ey51r"]
+
+[ext_resource type="PackedScene" uid="uid://d0rfues0pv1ud" path="res://billiard parts/Cue Ball.tscn" id="1_18x1k"]
+[ext_resource type="PackedScene" uid="uid://cknyspfdgdtxw" path="res://models/fourteenball.blend" id="2_7nrs4"]
+
+[node name="Node3D" instance=ExtResource("1_18x1k")]
+
+[node name="RigidBody3D" parent="." index="0" groups=["Ball"]]
+collision_layer = 2
+collision_mask = 11
+
+[node name="cueball" parent="RigidBody3D" index="1"]
+visible = false
+
+[node name="fourteenball" parent="RigidBody3D" index="2" instance=ExtResource("2_7nrs4")]

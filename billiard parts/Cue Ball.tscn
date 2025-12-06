@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0rfues0pv1ud"]
+
+[ext_resource type="Script" uid="uid://b40y7auiv3fhe" path="res://billiard parts/ball.gd" id="1_8kb2i"]
+[ext_resource type="PackedScene" uid="uid://3h8hcvj564g5" path="res://models/cueball.blend" id="1_a2liv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8kb2i"]
+friction = 0.2
+bounce = 0.35
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_b6gaa"]
+radius = 0.030708248
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8kb2i"]
+radius = 0.030250426
+
+[node name="Node3D" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["Cue Ball"]]
+collision_layer = 8
+collision_mask = 7
+mass = 0.165
+physics_material_override = SubResource("PhysicsMaterial_8kb2i")
+can_sleep = false
+continuous_cd = true
+linear_damp = 0.01
+angular_damp = 0.01
+script = ExtResource("1_8kb2i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_b6gaa")
+
+[node name="cueball" parent="RigidBody3D" instance=ExtResource("1_a2liv")]
+
+[node name="Area3D" type="Area3D" parent="." groups=["Cue Ball"]]
+collision_layer = 8
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_8kb2i")
+
+[connection signal="body_entered" from="Area3D" to="RigidBody3D" method="_on_area_3d_body_entered"]

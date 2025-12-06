@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ahi0hpp1vh1"]
+
+[ext_resource type="PackedScene" uid="uid://d0rfues0pv1ud" path="res://billiard parts/Cue Ball.tscn" id="1_rmt17"]
+[ext_resource type="PackedScene" uid="uid://cj1lde1rg2ly" path="res://models/twoball.blend" id="2_ov76t"]
+
+[node name="Node3D" instance=ExtResource("1_rmt17")]
+
+[node name="cueball" parent="RigidBody3D" index="1"]
+visible = false
+
+[node name="twoball" parent="RigidBody3D" index="2" instance=ExtResource("2_ov76t")]

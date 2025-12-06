@@ -1,0 +1,89 @@
+[gd_scene load_steps=19 format=3 uid="uid://dgy5cvn8de3rk"]
+
+[ext_resource type="PackedScene" uid="uid://cus2i8xn7olvg" path="res://billiard parts/Table.tscn" id="1_0ukcc"]
+[ext_resource type="PackedScene" uid="uid://d0rfues0pv1ud" path="res://billiard parts/Cue Ball.tscn" id="2_nt2wp"]
+[ext_resource type="PackedScene" uid="uid://dyt4hy27g6w8c" path="res://billiard parts/Pool Cue.tscn" id="3_nt2wp"]
+[ext_resource type="PackedScene" uid="uid://cgxoph3nikxta" path="res://billiard parts/15ball.tscn" id="4_pjfo3"]
+[ext_resource type="PackedScene" uid="uid://duq0c22oean8s" path="res://billiard parts/1ball.tscn" id="5_bypdj"]
+[ext_resource type="PackedScene" uid="uid://d3rqho46ey51r" path="res://billiard parts/14ball.tscn" id="6_mt04e"]
+[ext_resource type="PackedScene" uid="uid://2sxusimi344h" path="res://billiard parts/5ball.tscn" id="7_wlkra"]
+[ext_resource type="PackedScene" uid="uid://dt514lyjwpspd" path="res://billiard parts/11ball.tscn" id="8_fp10y"]
+[ext_resource type="PackedScene" uid="uid://cv74tp2y0x0e8" path="res://billiard parts/8ball.tscn" id="9_pyc51"]
+[ext_resource type="PackedScene" uid="uid://67obaym0od67" path="res://billiard parts/6ball.tscn" id="10_t2let"]
+[ext_resource type="PackedScene" uid="uid://b2eg0eltmbfee" path="res://billiard parts/9ball.tscn" id="11_jvfyw"]
+[ext_resource type="PackedScene" uid="uid://pvstje7omrtg" path="res://billiard parts/4ball.tscn" id="12_lrxog"]
+[ext_resource type="PackedScene" uid="uid://j6dxjt0ghb4b" path="res://billiard parts/3ball.tscn" id="13_8txwb"]
+[ext_resource type="PackedScene" uid="uid://drumcoe1jxn1m" path="res://billiard parts/10ball.tscn" id="14_f51xl"]
+[ext_resource type="PackedScene" uid="uid://dh3o2a0qx8h7h" path="res://billiard parts/13ball.tscn" id="15_el464"]
+[ext_resource type="PackedScene" uid="uid://c2ahi0hpp1vh1" path="res://billiard parts/2ball.tscn" id="16_j2nm8"]
+[ext_resource type="PackedScene" uid="uid://udth0jobk2k5" path="res://billiard parts/7ball.tscn" id="17_l7cvi"]
+[ext_resource type="PackedScene" uid="uid://c27l8v131yuu6" path="res://billiard parts/12ball.tscn" id="18_afuyr"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D2" parent="." instance=ExtResource("2_nt2wp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10553011, -0.42321756)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.059155464, 2.5346024, 0.08967602)
+light_energy = 2.582
+light_indirect_energy = 1.62
+light_volumetric_fog_energy = 0.725
+light_angular_distance = 8.37
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("3_nt2wp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10715592, -1.2028176)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(-1, -5.2490403e-08, 6.9910655e-08, 0, 0.79968464, 0.60042024, -8.742278e-08, 0.60042024, -0.79968464, -0.0021436214, 0.29999816, 0.4924789)
+current = true
+
+[node name="StaticBody3D" parent="." instance=ExtResource("1_0ukcc")]
+
+[node name="Node3D" parent="StaticBody3D" instance=ExtResource("4_pjfo3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12417914, 0.111, 0.62767035)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.42757642, 0.28966668, -0.8563128, 0.12940243, 0.95712763, 0.25915593, 0.8946695, 8.32511e-09, -0.44672877, -0.40110743, 0.3648612, -0.79163563)
+
+[node name="Node3D" parent="." instance=ExtResource("5_bypdj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110296845, 0.41393173)
+
+[node name="Node3D3" parent="." instance=ExtResource("6_mt04e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029351473, 0.115568936, 0.46564332)
+
+[node name="Node3D4" parent="." instance=ExtResource("7_wlkra")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.060960785, 0.111, 0.52155334)
+
+[node name="Node3D5" parent="." instance=ExtResource("8_fp10y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029351354, 0.111, 0.46510822)
+
+[node name="Node3D6" parent="." instance=ExtResource("9_pyc51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.111, 0.522)
+
+[node name="Node3D7" parent="." instance=ExtResource("10_t2let")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06321859, 0.111, 0.5215534)
+
+[node name="Node3D8" parent="." instance=ExtResource("11_jvfyw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.094827905, 0.111, 0.573483)
+
+[node name="Node3D9" parent="." instance=ExtResource("12_lrxog")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029351473, 0.111, 0.573483)
+
+[node name="Node3D10" parent="." instance=ExtResource("13_8txwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.031609297, 0.111, 0.573483)
+
+[node name="Node3D11" parent="." instance=ExtResource("14_f51xl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09031224, 0.111, 0.57348293)
+
+[node name="Node3D12" parent="." instance=ExtResource("15_el464")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.111, 0.62767017)
+
+[node name="Node3D13" parent="." instance=ExtResource("16_j2nm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.060960665, 0.111, 0.62541246)
+
+[node name="Node3D14" parent="." instance=ExtResource("17_l7cvi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06096077, 0.111, 0.62767035)
+
+[node name="Node3D15" parent="." instance=ExtResource("18_afuyr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12192166, 0.111, 0.62541246)
